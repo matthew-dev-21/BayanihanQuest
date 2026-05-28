@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { FaBars, FaGithub, FaTimes } from "react-icons/fa";
 import { SiCanva } from "react-icons/si";
+import logo from "./logo_bayanihan.png";
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
@@ -18,7 +19,9 @@ export default function Navbar() {
         <header className="fixed top-0 z-50 left-0 w-full px-4 py-3">
             <nav className="panel mx-auto flex max-w-6xl items-center justify-between rounded-lg px-4 py-3">
                 <a href="#home" className="flex items-center gap-3 font-black tracking-tight">
-                    <span className="grid h-10 w-10 place-items-center rounded-lg bg-[#47d16c] text-[#04100b]">BQ</span>
+                    <span className="grid h-10 w-10 place-items-center overflow-hidden rounded-lg border border-white/15 bg-transparent">
+                        <img src={logo} alt="Bayanihan Quest logo" className="h-10 w-10 object-contain" />
+                    </span>
                     <span>Bayanihan Quest</span>
                 </a>
 
