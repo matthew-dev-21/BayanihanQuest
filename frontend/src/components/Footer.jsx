@@ -1,6 +1,6 @@
 export default function Footer() {
     return (
-        <footer className="page-shell border-t border-white/10">
+        <footer className="page-shell is-footer border-t border-white/10">
             <section className="section-wrap py-10">
                 <div className="flex flex-col justify-between gap-6 md:flex-row md:items-center">
                     <div>

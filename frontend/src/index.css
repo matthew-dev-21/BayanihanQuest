@@ -66,6 +66,10 @@ a {
   background-size: 56px 56px;
 }
 
+.page-shell.is-footer {
+  min-height: unset;
+}
+
 .section-wrap {
   width: min(1180px, calc(100% - 32px));
   margin: 0 auto;

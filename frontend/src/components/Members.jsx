@@ -5,12 +5,14 @@ export default function Members() {
     const [scrollProgress, setScrollProgress] = useState(0);
     const containerRef = useRef(null);
 
+    const assetUrl = (filename) => new URL(`../img/${filename}`, import.meta.url).href;
+
     const members = [
-        { id: 1, name: "Matthew Manalang", desc: "Project lead focused on product flow, content direction, and community-first experience design.", image: "/team-assets/3.png" },
-        { id: 2, name: "Juan Marco Aguilar", desc: "Frontend developer building responsive screens, quest cards, and polished interactions.", image: "/team-assets/5.png" },
-        { id: 3, name: "Edrian Manalo Guno", desc: "Backend and data support for quest progress, profiles, and platform reliability.", image: "/team-assets/4.jpg" },
-        { id: 4, name: "Dave Lorenz Ignacio", desc: "UI/UX contributor shaping badges, navigation, and clear user journeys.", image: "/team-assets/2.png" },
-        { id: 5, name: "Prince Russel Araneta", desc: "Quality and feature support for testing, documentation, and future community tools.", image: "/team-assets/1.png" },
+        { id: 1, name: "Matthew Manalang", desc: "Project lead focused on product flow, content direction, and community-first experience design.", image: assetUrl('3.jpg') },
+        { id: 2, name: "Juan Marco Aguilar", desc: "Frontend developer building responsive screens, quest cards, and polished interactions.", image: assetUrl('5.jpg') },
+        { id: 4, name: "Dave Lorenz Ignacio", desc: "UI/UX contributor shaping badges, navigation, and clear user journeys.", image: assetUrl('2.jpg') },
+        { id: 5, name: "Prince Russel Araneta", desc: "Backend and data support for quest progress, profiles, and platform reliability.", image: assetUrl('1.jpg') },
+        { id: 3, name: "Edrian Manalo Guno", desc: "Tester focused on validating features, catching bugs, and ensuring a smooth player experience.", image: assetUrl('4.jpg') },
     ];
 
     useEffect(() => {
@@ -70,7 +72,7 @@ export default function Members() {
                                         <div className={`w-full max-w-[280px] sm:max-w-none aspect-[4/3] rounded-lg border border-white/10 flex items-center justify-center relative overflow-hidden transition-all duration-700
                                             ${isActive ? 'bg-white/10 border-[#47d16c]/50 shadow-[0_0_20px_rgba(71,209,108,0.15)] transform translate-y-0 opacity-100' : 'bg-white/5 opacity-50 translate-y-8'}`}
                                         >
-                                            <FallbackImage src={member.image} alt={member.name} className="w-full h-full object-cover" />
+                                            <FallbackImage src={member.image} alt={member.name} className="w-full h-full object-contain" />
                                         </div>
                                     </div>
 

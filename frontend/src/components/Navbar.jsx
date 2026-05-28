@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { FaBars, FaGithub, FaTimes } from "react-icons/fa";
+import { SiCanva } from "react-icons/si";
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
     const toggleMenu = () => setIsOpen(!isOpen);
     const repoUrl = "https://github.com/matthew-dev-21/bayanihanquest_v1";
+    const canvaUrl = "https://www.canva.com/design/DAHK9qZTOZ4/98hy4uDfSh9g641xZw_n9w/edit";
     const links = [
         { label: "Quests", href: "#quests" },
         { label: "Dashboard", href: "#dashboard" },
@@ -23,14 +25,26 @@ export default function Navbar() {
                 <ul className="hidden items-center gap-7 text-sm font-semibold text-slate-200 md:flex">
                     {links.map((link) => (
                         <li key={link.href}>
-                            <a className="transition-colors hover:text-[#47d16c]" href={link.href}>{link.label}</a>
+                            <a
+                                className="transition-colors hover:text-[#47d16c]"
+                                href={link.href}
+                                target={link.external ? "_blank" : undefined}
+                                rel={link.external ? "noreferrer" : undefined}
+                            >
+                                {link.label}
+                            </a>
                         </li>
                     ))}
                 </ul>
 
-                <a className="secondary-button hidden gap-2 md:inline-flex" href={repoUrl} target="_blank" rel="noreferrer">
-                    <FaGithub /> GitHub Code
-                </a>
+                <div className="hidden items-center gap-3 md:flex">
+                    <a className="secondary-button gap-2" href={canvaUrl} target="_blank" rel="noreferrer">
+                        <SiCanva /> Canva PPT
+                    </a>
+                    <a className="secondary-button gap-2" href={repoUrl} target="_blank" rel="noreferrer">
+                        <FaGithub /> GitHub Code
+                    </a>
+                </div>
 
                 <div
                     className="relative cursor-pointer rounded-lg border border-white/15 p-2 text-2xl text-white md:hidden"
@@ -42,9 +56,22 @@ export default function Navbar() {
                         <ul className="panel absolute right-0 top-full z-50 mt-3 flex min-w-[220px] flex-col gap-3 rounded-lg px-5 py-4 text-base font-semibold text-white shadow-lg">
                             {links.map((link) => (
                                 <li key={link.href}>
-                                    <a href={link.href} className="transition-colors hover:text-[#47d16c]" onClick={toggleMenu}>{link.label}</a>
+                                    <a
+                                        href={link.href}
+                                        className="transition-colors hover:text-[#47d16c]"
+                                        onClick={toggleMenu}
+                                        target={link.external ? "_blank" : undefined}
+                                        rel={link.external ? "noreferrer" : undefined}
+                                    >
+                                        {link.label}
+                                    </a>
                                 </li>
                             ))}
+                            <li>
+                                <a href={canvaUrl} target="_blank" rel="noreferrer" className="flex items-center gap-2 transition-colors hover:text-[#47d16c]" onClick={toggleMenu}>
+                                    <SiCanva /> Canva PPT
+                                </a>
+                            </li>
                             <li><a href={repoUrl} target="_blank" rel="noreferrer" className="transition-colors hover:text-[#47d16c]" onClick={toggleMenu}>GitHub Code</a></li>
                         </ul>
                     )}
