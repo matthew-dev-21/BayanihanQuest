@@ -78,3 +78,5 @@ If you prefer not to use `vercel.json`:
 - **Output Directory**: `dist`
 
 Note: the Python service in `backend/` is not deployed by default to Vercel in this setup.
+
+Full step-by-step guide: [DEPLOY_VERCEL.md](DEPLOY_VERCEL.md)
