@@ -1,9 +1,6 @@
 # Vercel Deployment Guide (BayanihanQuest)
 
-This repository is a monorepo:
-
-- `frontend/` → Vite + React (this is what Vercel deploys)
-- `backend/` → FastAPI (not deployed by default in this Vercel setup)
+This repository deploys the Vite + React site from `frontend/`.
 
 The repo already includes a root [vercel.json](vercel.json) that tells Vercel how to build the Vite app inside `frontend/`.
 
@@ -40,8 +37,6 @@ This app is a single-page app (SPA). The repo’s [vercel.json](vercel.json) inc
 
 ## 5) Environment Variables (optional)
 
-Right now, the frontend does not call the backend API.
-
 If you later add API calls, follow Vite’s pattern:
 
 - In Vercel Project → **Settings** → **Environment Variables**
@@ -77,11 +72,4 @@ After changing env vars, redeploy:
 
 The repo includes several large images (game assets). If deploys feel slow, you can optimize images later, but it’s not required for a first deployment.
 
-## 8) About the FastAPI Backend
-
-Vercel can host frontends easily. For the Python backend you have two common options:
-
-- **Separate backend hosting** (simplest): Render / Railway / Fly.io / Azure App Service, then set `VITE_API_BASE_URL` in Vercel.
-- **Vercel Functions**: convert your FastAPI app to run under `/api` (works, but requires restructuring).
-
-If you tell me which option you prefer, I can set it up.
+If you later add a backend API, the simplest approach is to host it separately (Render / Railway / Fly.io / Azure App Service) and set `VITE_API_BASE_URL` in Vercel.

@@ -5,7 +5,7 @@ Bayanihan Quest is a redesigned website for the existing Windows Forms game in `
 ## Improved Structure
 
 - `frontend/` - Vite + React website with a dark game-inspired UI
-- `backend/` - FastAPI service with community quest endpoints and preserved legacy dashboard endpoints
+
 
 ## Frontend Highlights
 
@@ -47,16 +47,6 @@ cd frontend
 npm install
 npm run dev
 ```
-
-## Run Backend
-
-```bash
-cd backend
-pip install -r requirements.txt
-uvicorn main:app --reload
-```
-
-Set `SUPABASE_URL` and `SUPABASE_KEY` in a `.env` file to enable the preserved live Supabase endpoints.
 
 ## Deploy to Vercel (Frontend)
 
