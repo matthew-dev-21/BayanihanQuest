@@ -1,4 +1,4 @@
-import { FaAward, FaHandshake, FaMapMarkedAlt, FaTasks } from "react-icons/fa";
+import { FaAward, FaBullseye, FaHandshake, FaLightbulb, FaMapMarkedAlt, FaTasks } from "react-icons/fa";
 import barangayMap from "../game-assets/barangay-map.png";
 import roadMap from "../game-assets/road-map.png";
 import chicken from "../game-assets/chicken.png";
@@ -32,9 +32,54 @@ export default function About() {
             <div className="section-wrap">
                 <div data-aos="fade-up" className="mx-auto max-w-3xl text-center">
                     <span className="badge"><FaHandshake /> Bayanihan in action</span>
-                    <h2 className="mt-5 text-3xl font-black text-white sm:text-5xl">A real barangay adventure built from your game systems.</h2>
+                    <h2 className="mt-5 text-3xl font-black text-white sm:text-5xl">A game concept that turns bayanihan into a rewarding loop.</h2>
                     <p className="mt-5 text-lg leading-8 text-slate-300">
-                        The website now follows the actual desktop game: move with WASD, interact with E, follow the mission board, collect trash and ingredients, save progress, and grow from Volunteer into a trusted community leader.
+                        Bayanihan Quest is designed to make community service feel as satisfying as leveling up: clear quests, instant rewards, visible progress, and upgrades that make the barangay better.
+                    </p>
+                </div>
+
+                <div className="mt-10 grid gap-5 lg:grid-cols-3">
+                    {[
+                        {
+                            icon: <FaLightbulb />,
+                            title: "Vision",
+                            text: "A modern community-service RPG where every small action adds up to real change — and leadership is something you earn through consistency.",
+                        },
+                        {
+                            icon: <FaTasks />,
+                            title: "Mission",
+                            text: "Guide players from simple cleanup tasks to pantry drives and community projects with missions that teach teamwork, responsibility, and follow-through.",
+                        },
+                        {
+                            icon: <FaBullseye />,
+                            title: "Goal",
+                            text: "Persuade and encourage gamers to join real-world community action by making volunteering feel approachable, measurable, and genuinely fun.",
+                        },
+                    ].map((item, index) => (
+                        <article
+                            key={item.title}
+                            data-aos="fade-up"
+                            data-aos-delay={index * 90}
+                            className="panel rounded-lg p-6"
+                        >
+                            <div className="flex items-start gap-4">
+                                <span className="grid h-12 w-12 shrink-0 place-items-center rounded-lg bg-white/10 text-xl text-[var(--green)]">
+                                    {item.icon}
+                                </span>
+                                <div className="min-w-0">
+                                    <h3 className="text-xl font-black text-white">{item.title}</h3>
+                                    <p className="mt-2 leading-7 text-slate-300">{item.text}</p>
+                                </div>
+                            </div>
+                        </article>
+                    ))}
+                </div>
+
+                <div data-aos="fade-up" className="mx-auto mt-10 max-w-4xl rounded-lg border border-white/10 bg-white/[0.04] p-6">
+                    <p className="text-sm font-bold uppercase tracking-wide text-[var(--gold)]">Why it works</p>
+                    <h3 className="mt-2 text-2xl font-black text-white">From “play” to “participate” — without guilt-tripping.</h3>
+                    <p className="mt-3 leading-7 text-slate-300">
+                        The game rewards helpful behavior the same way great games reward progress: you see your impact, you earn trust, and you unlock bigger responsibilities. It’s an invitation to try community service — not a lecture.
                     </p>
                 </div>
 

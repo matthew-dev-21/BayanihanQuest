@@ -76,6 +76,10 @@ a {
   padding: 88px 0;
 }
 
+.section-wrap.section-wrap--hero {
+  padding: clamp(28px, 4vh, 44px) 0;
+}
+
 .panel {
   border: 1px solid var(--line);
   background: var(--panel);
@@ -187,5 +191,9 @@ a {
 @media (max-width: 760px) {
   .section-wrap {
     padding: 64px 0;
+  }
+
+  .section-wrap.section-wrap--hero {
+    padding: clamp(22px, 4.2vh, 36px) 0;
   }
 }
