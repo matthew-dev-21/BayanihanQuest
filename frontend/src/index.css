@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+:root {
+  color: #f8fafc;
+  background: #071014;
+  --bg: #071014;
+  --panel: rgba(12, 22, 27, 0.82);
+  --panel-strong: rgba(17, 31, 39, 0.94);
+  --line: rgba(255, 255, 255, 0.12);
+  --muted: #a7b4be;
+  --text: #f8fafc;
+  --green: #47d16c;
+  --gold: #f8c846;
+  --blue: #37b7ff;
+  --red: #ff6b6b;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+  margin: 0;
+  background:
+    radial-gradient(circle at 18% 15%, rgba(71, 209, 108, 0.16), transparent 26rem),
+    radial-gradient(circle at 78% 7%, rgba(55, 183, 255, 0.12), transparent 24rem),
+    linear-gradient(135deg, #071014 0%, #0c171c 52%, #10161f 100%);
+  color: var(--text);
+}
+
+@keyframes blink {
+
+  0%,
+  50% {
+    opacity: 1;
+  }
+
+  50.01%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.animate-blink {
+  animation: blink 0.90s step-start infinite;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.page-shell {
+  min-height: 100vh;
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.055) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.055) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+.section-wrap {
+  width: min(1180px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 88px 0;
+}
+
+.panel {
+  border: 1px solid var(--line);
+  background: var(--panel);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.28);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid rgba(248, 200, 70, 0.34);
+  background: rgba(248, 200, 70, 0.1);
+  color: #ffe39a;
+  border-radius: 999px;
+  padding: 8px 12px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.primary-button,
+.secondary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  border-radius: 8px;
+  padding: 0 18px;
+  font-weight: 800;
+  transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+}
+
+.primary-button {
+  background: linear-gradient(135deg, var(--green), var(--blue));
+  color: #04100b;
+}
+
+.secondary-button {
+  border: 1px solid var(--line);
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.055);
+}
+
+.primary-button:hover,
+.secondary-button:hover {
+  transform: translateY(-2px);
+}
+
+.progress-track {
+  width: 100%;
+  height: 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--green), var(--gold));
+}
+
+.loader-screen {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 20px;
+  background: #071014;
+  color: var(--muted);
+}
+
+.quest-loader {
+  display: flex;
+  gap: 10px;
+}
+
+.quest-loader span {
+  width: 18px;
+  height: 18px;
+  border-radius: 5px;
+  background: var(--green);
+  animation: questPulse 900ms ease-in-out infinite;
+}
+
+.quest-loader span:nth-child(2) {
+  animation-delay: 120ms;
+  background: var(--gold);
+}
+
+.quest-loader span:nth-child(3) {
+  animation-delay: 240ms;
+  background: var(--blue);
+}
+
+@keyframes questPulse {
+  0%, 100% {
+    transform: translateY(0);
+    opacity: 0.45;
+  }
+  50% {
+    transform: translateY(-12px);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 760px) {
+  .section-wrap {
+    padding: 64px 0;
+  }
+}
